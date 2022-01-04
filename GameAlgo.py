@@ -22,7 +22,7 @@ import subprocess
 #run server
 subprocess.Popen(["powershell.exe","java -jar Ex4_Server_v0.0.jar 4"])
 # init pygame
-WIDTH, HEIGHT = 1920, 800
+WIDTH, HEIGHT = 1920, 1000
 # default port
 PORT = 6666
 # server host (default localhost 127.0.0.1)
