@@ -5,6 +5,7 @@ Very simple GUI example for python client to communicates with the server and "p
 """
 import os.path
 import sys
+
 from types import SimpleNamespace
 
 from pygame.draw import circle
@@ -16,7 +17,10 @@ import json
 from pygame import gfxdraw
 import pygame
 from pygame import *
+import subprocess
 
+#run server
+subprocess.Popen(["powershell.exe","java -jar Ex4_Server_v0.0.jar 4"])
 # init pygame
 WIDTH, HEIGHT = 1080, 720
 # default port
@@ -51,6 +55,25 @@ characters=Characters()
 
 
 #load images
+
+rattataIM = pygame.image.load(os.path.join('images','rattata.jpg'))
+rattataIM = pygame.transform.scale(rattataIM,(70,70))
+
+koffingIM = pygame.image.load(os.path.join('images','koffing.jpg'))
+koffingIM = pygame.transform.scale(koffingIM,(70,70))
+
+psyduckIM = pygame.image.load(os.path.join('images','psyduck.jpg'))
+psyduckIM = pygame.transform.scale(psyduckIM,(70,70))
+
+squirtleIM = pygame.image.load(os.path.join('images','squirtle.jpg'))
+squirtleIM = pygame.transform.scale(squirtleIM,(70,70))
+
+jigglupuffIM = pygame.image.load(os.path.join('images','jigglupuff.jpg'))
+jigglupuffIM = pygame.transform.scale(jigglupuffIM,(70,70))
+
+alakazamIM = pygame.image.load(os.path.join('images','alakazam.jpg'))
+alakazamIM = pygame.transform.scale(alakazamIM,(70,70))
+
 bulbasaurIM = pygame.image.load(os.path.join('images','bulbasaur.jpg'))
 bulbasaurIM = pygame.transform.scale(bulbasaurIM,(70,70))
 
@@ -59,6 +82,9 @@ charizardIM = pygame.transform.scale(charizardIM,(70,70))
 
 pikacuIM = pygame.image.load(os.path.join('images','pikachu.jpg'))
 pikacuIM = pygame.transform.scale(pikacuIM,(70,70))
+
+kyorgeIM = pygame.image.load(os.path.join('images','kyorge.jpg'))
+kyorgeIM = pygame.transform.scale(kyorgeIM,(70,70))
 
 mewtwoIM = pygame.image.load(os.path.join('images','mewtwo.jpg'))
 mewtwoIM = pygame.transform.scale(mewtwoIM,(70,70))
@@ -112,8 +138,8 @@ def my_scale(data, x=False, y=False):
 radius = 15
 
 client.add_agent("{\"id\":0}")
-# client.add_agent("{\"id\":1}")
-# client.add_agent("{\"id\":2}")
+client.add_agent("{\"id\":1}")
+client.add_agent("{\"id\":2}")
 # client.add_agent("{\"id\":3}")
 
 # this commnad starts the server - the game is running now
@@ -188,14 +214,29 @@ while client.is_running() == 'true':
         X, Y, Z = p.getLocation()
         x = my_scale(X, x=True)
         y = my_scale(Y, y=True)
-        if p.value<6:
+        if (p.value%15)<6 and (p.value%15)>0:
+            screen.blit(rattataIM,(int(x), int(y)))
+        elif (p.value%15)==6:
+            screen.blit(koffingIM,(int(x), int(y)))
+        elif (p.value%15)==7:
+            screen.blit(psyduckIM,(int(x), int(y)))
+        elif (p.value%15)==8:
+            screen.blit(squirtleIM,(int(x), int(y)))
+        elif (p.value%15)==9:
+            screen.blit(jigglupuffIM,(int(x), int(y)))
+        elif (p.value%15)==10:
+            screen.blit(alakazamIM,(int(x), int(y)))
+        elif (p.value%15)==11:
             screen.blit(bulbasaurIM,(int(x), int(y)))
-        elif p.value<9:
+        elif (p.value%15)==12:
             screen.blit(charizardIM,(int(x), int(y)))
-        elif p.value<10:
+        elif (p.value%15)==13:
             screen.blit(pikacuIM,(int(x), int(y)))
+        elif (p.value%15)==14:
+            screen.blit(kyorgeIM,(int(x), int(y)))
         else:
             screen.blit(mewtwoIM,(int(x), int(y)))
+
 
 
 
@@ -209,7 +250,7 @@ while client.is_running() == 'true':
     for agent in characters.agents:
         if agent.dest == -1:
             next_node = (agent.src - 1) % algo.get_graph().v_size()
-            client.choose_next_edge(
+            client.choogitse_next_edge(
                 '{"agent_id":'+str(agent.id)+', "next_node_id":'+str(next_node)+'}')
             ttl = client.time_to_end()
             print(ttl, client.get_info())
