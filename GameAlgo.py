@@ -22,7 +22,7 @@ import subprocess
 #run server
 subprocess.Popen(["powershell.exe","java -jar Ex4_Server_v0.0.jar 4"])
 # init pygame
-WIDTH, HEIGHT = 1080, 720
+WIDTH, HEIGHT = 1920, 800
 # default port
 PORT = 6666
 # server host (default localhost 127.0.0.1)
@@ -30,7 +30,7 @@ HOST = '127.0.0.1'
 pygame.mixer.pre_init(44100, -16, 2, 2048)
 pygame.init()
 
-screen = display.set_mode((WIDTH, HEIGHT), depth=32, flags=RESIZABLE)
+screen = display.set_mode((1080, 800), depth=32, flags=RESIZABLE)
 
 background_image = pygame.image.load("images/background.jpg").convert()
 backmusic = 'music/intro.mp3'
@@ -95,9 +95,7 @@ ashIM = pygame.transform.scale(ashIM,(40,80))
 background_image=pygame.image.load(os.path.join('images','background1.jpg'))
 background_image= pygame.transform.scale(background_image,(WIDTH,HEIGHT))
 
-ship_top = screen.get_height() - HEIGHT
-ship_left =screen.get_width()  - WIDTH
-screen.blit(background_image,(ship_left,ship_top))
+
 FONT = pygame.font.SysFont('Arial', 20, bold=True)
 
 
@@ -148,14 +146,28 @@ characters.load_Agents_from_json(client.get_agents())
 characters.load_Pokemons_from_json(client.get_pokemons())
 print(characters.pokemons)
 
+#start playing background music
+mixer.init()
+mixer.music.load("music/PokemonIntroSaliEx4.mp3")
+mixer.music.set_volume(0.7)
+mixer.music.play()
+
 """
 The code below should be improved significantly:
 The GUI and the "algo" are mixed - refactoring using MVC design pattern is required.
 """
 
 while client.is_running() == 'true':
+    ship_top = screen.get_height() -HEIGHT
+    ship_left = screen.get_width() - WIDTH
+    screen.blit(background_image, (ship_left, ship_top))
+
+
+
     characters.load_Agents_from_json(client.get_agents())
     characters.load_Pokemons_from_json(client.get_pokemons())
+
+
 
     # check events
     for event in pygame.event.get():
@@ -166,6 +178,25 @@ while client.is_running() == 'true':
     # refresh surface
     screen.fill(Color(0,0,0))
     screen.blit(background_image, (ship_left, ship_top))
+    # score, time to end, move counter.
+
+    #time
+    timeleft = float(client.time_to_end()) / 1000
+    timelabel = FONT.render(f"Time Left: {int(timeleft)}", True, Color(70, 70, 90))
+    rect = timelabel.get_rect(center=(70, 10))
+    screen.blit(timelabel, rect)
+
+    #score
+    info = json.loads(client.get_info())
+    score = info.get("GameServer")["grade"]
+    scorelabel = FONT.render(f"Score: {score}", True, Color(70, 70, 90))
+    rect = scorelabel.get_rect(center=(200, 10))
+    screen.blit(scorelabel, rect)
+    #moves
+    moves = info.get("GameServer")["moves"]
+    moveslabel = FONT.render(f"Moves: {moves}", True, Color(70, 70, 90))
+    rect = moveslabel.get_rect(center=(300, 10))
+    screen.blit(moveslabel, rect)
 
     # draw nodes
     for n in algo.get_graph().get_all_v().values():
@@ -250,7 +281,7 @@ while client.is_running() == 'true':
     for agent in characters.agents:
         if agent.dest == -1:
             next_node = (agent.src - 1) % algo.get_graph().v_size()
-            client.choogitse_next_edge(
+            client.choose_next_edge(
                 '{"agent_id":'+str(agent.id)+', "next_node_id":'+str(next_node)+'}')
             ttl = client.time_to_end()
             print(ttl, client.get_info())
