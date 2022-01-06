@@ -1,3 +1,5 @@
+import json
+
 
 class GameAlgo:
     def __init__(self,graph_algo):
@@ -8,7 +10,7 @@ class GameAlgo:
                 self.isAgentSent[(s, d)] = False
 
     def choose_next_edge(self,characters,client)->tuple:
-        i = 0
+        #i = 0
         for agent in characters.agents:
             if agent.dest == -1:
                 if characters.agentspaths[agent.getId()] == []:
@@ -23,15 +25,11 @@ class GameAlgo:
 
                 if characters.agentspaths[agent.getId()] == []:
                     characters.agentspaths[agent.getId()] = [agent.src]
-                    # print(characters.agentspaths[agent.getId()])
                 next_node = characters.agentspaths[agent.getId()].pop()
                 self.isAgentSent[agent.src, next_node] = False
-                print(characters.edegesValues)
+                #print(characters.edegesValues)
                 client.choose_next_edge('{"agent_id":' + str(agent.id) + ', "next_node_id":' + str(next_node) + '}')
-                ttl = client.time_to_end()
-                # print(ttl, client.get_info())
-                # print(characters.pokemons)
-            i = (i + 1) % len(characters.pokemons)
+            #i = (i + 1) % len(characters.pokemons)
 
 
 

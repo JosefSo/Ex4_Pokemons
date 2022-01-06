@@ -124,6 +124,7 @@ def my_scale(data, x=False, y=False):
 # this commnad starts the server - the game is running now
 client.start()
 flag=False
+sc=0
 while client.is_running() == 'true':
     ship_top = screen.get_height() -HEIGHT
     ship_left = screen.get_width() - WIDTH
@@ -159,6 +160,9 @@ while client.is_running() == 'true':
     # score
     info = json.loads(client.get_info())
     score = info.get("GameServer")["grade"]
+    if sc<score:
+        print(f"+{score-sc} total: {score}")
+        sc=score
     scorelabel = FONT.render(f"Score: {score}", True, crimson)
     rect = scorelabel.get_rect(center=(200, 10))
     screen.blit(scorelabel, rect)
@@ -238,5 +242,6 @@ while client.is_running() == 'true':
 
     #move agents
     client.move()
+print(client.get_info())
 
 # game over:
