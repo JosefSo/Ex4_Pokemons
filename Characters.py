@@ -1,4 +1,7 @@
 import json
+import operator
+
+from DiGraph import DiGraph
 
 
 class Agent:
@@ -40,6 +43,23 @@ class Pokemon:
 
     def setLocation(self, x: float, y: float, z: float):
         self.pos = (x, y, z)
+    def getEdge(self,graph:DiGraph):
+        EPS=0.00001
+        x,y,z=self.pos
+        for v1 in graph.get_all_v().keys():
+            dv1 = graph.distNodeToPoint(v1,(x,y,z))
+            for v2 in graph.all_out_edges_of_node(v1).keys():
+                dv2 = graph.distNodeToPoint(v2, (x, y, z))
+                tup=graph.equationAndDist(v1,v2)
+                m,n,d=tup
+                if y+EPS>(m*x)+n and y-EPS<(m*x)+n:
+                    if d+EPS>dv1+dv2 and d-EPS<dv1+dv2:
+                        if self.type<0 and v1>v2:
+                            return (v1,v2)
+                        return (v2,v1)
+        return None
+
+
 
     def __lt__(self, other):
         return self.value > other.value
@@ -53,6 +73,8 @@ class Characters:
     def __init__(self):
         self.agents = []
         self.pokemons = []
+        self.agentspaths = {}
+        self.edegesValues=[]
     def load_Agents_from_json(self, jsonStr: str) -> bool:
         self.agents = []
         dict = json.loads(jsonStr)
@@ -67,10 +89,12 @@ class Characters:
             pos=(location[0], location[1], location[2])
             agent=Agent(id,value,src,dest,speed,pos)
             self.agents.append(agent)
+
         self.agents.sort()
         return True
 
-    def load_Pokemons_from_json(self, jsonStr: str) -> bool:
+    def load_Pokemons_from_json(self, jsonStr: str,graph:DiGraph) -> bool:
+        edegesValuesDic = {}
         self.pokemons = []
         dict = json.loads(jsonStr)
         elements = dict["Pokemons"]
@@ -81,5 +105,14 @@ class Characters:
             pos = (location[0], location[1], location[2])
             pokemon = Pokemon(value,type, pos)
             self.pokemons.append(pokemon)
+            edge= pokemon.getEdge(graph)
+            if edge not in edegesValuesDic.keys():
+                edegesValuesDic[edge]= pokemon.value
+            else:
+                edegesValuesDic[edge] = edegesValuesDic[edge]+pokemon.value
+        self.edegesValues = sorted(edegesValuesDic.items(), key=operator.itemgetter(1))
+        self.edegesValues.reverse()
         self.pokemons.sort()
+
+
         return True

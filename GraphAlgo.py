@@ -103,7 +103,7 @@ class GraphAlgo(GraphAlgoInterface):
         curr=id2
         if id1 not in self.graph.nodes.keys()or id1 not in self.graph.nodes.keys():
            return (float('inf'), [])
-        stack.append(self.graph.nodes[curr])
+        stack.append(self.graph.nodes[curr].getId())
         if id1 == id2:
             return (0,stack)
         parentsMap, nodeCosts =self.dijkstra(id1)
@@ -114,11 +114,11 @@ class GraphAlgo(GraphAlgoInterface):
             return (float('inf'), [])
         while curr != id1:
             curr = parentsMap[curr]
-            stack.append(self.graph.nodes[curr])
-        NodeList=[]
-        while(stack):
-            NodeList.append(stack.pop().getId())
-        return (dist,NodeList)
+            stack.append(self.graph.nodes[curr].getId())
+        #NodeList=[]
+        # while(stack):
+        #     NodeList.append(stack.pop().getId())
+        return (dist,stack)
 
     def floyd(self, G, node_lst: list[int]):
         """

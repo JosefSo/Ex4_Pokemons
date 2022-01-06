@@ -1,3 +1,5 @@
+import math
+
 from GraphInterface import GraphInterface
 class Node:
     def __init__(self, node_id: int, pos: tuple=None):
@@ -32,6 +34,7 @@ class Edge:
     def getWeight(self) -> float:
         return self.weight
 
+
 class DiGraph(GraphInterface):
 
     def __init__(self):
@@ -48,7 +51,27 @@ class DiGraph(GraphInterface):
        d={}
        d[0]=g1
        return d
-
+    def equationAndDist(self, src:int, dest:int) -> tuple:
+        x1,y1,z1= self.nodes[src].getLocation()
+        x2, y2, z2 = self.nodes[dest].getLocation()
+        dx= (x2-x1)
+        dy= (y2-y1)
+        dz= (z2-z1)
+        if x2 == x1:
+            m=0
+            n=x1
+        else:
+            m= dy/dx
+            n= y2-(m*x2)
+        d=math.sqrt(math.pow(dx,2)+math.pow(dy,2)+math.pow(dz,2))
+        return (m,n,d)
+    def distNodeToPoint(self, v: int, p: tuple) -> float:
+        x1, y1, z1 = self.nodes[v].getLocation()
+        x2, y2, z2 = p
+        dx = (x2 - x1)
+        dy = (y2 - y1)
+        dz = (z2 - z1)
+        return math.sqrt(math.pow(dx,2)+math.pow(dy,2)+math.pow(dz,2))
     def v_size(self) -> int:
         return len(self.nodes)
 
