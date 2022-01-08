@@ -18,7 +18,6 @@ As part of implementing the graphs we implemented classes:
 * class GraphInterface.py
 * class GraphAlgo.py
 * class DiGraph.py
-* class aco.py
 * class main.py
 * class test_DiGraph.py
 * class test_GraphAlgo.py
@@ -42,8 +41,6 @@ As part of implementing the graphs we implemented classes:
 - In DiGraph.py we have 3 classes: Node, Edge, DiGraph itself and some basic functions on graph such as getters, setters, add Node, remove Node, remove Edge etc.
 <br>
 - In GraphAlgo.py we have algorithms on grpah such as find shortest path, find center on graph, tsp. GraphAlgo.py uses DiGraph. 
-<br>
-- In aco.py we have three classes: ACO, Graph, Aunt we use them to implement ACO algorithm for solving TSP.
 <br>
 - test_DiGraph.py and test_GraphAlgo.py are tests for our program.
 <br>
