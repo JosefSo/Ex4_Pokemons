@@ -49,15 +49,14 @@ As part of implementing the graphs we implemented classes:
 link to the wiki: <br>
 https://github.com/JosefSo/Ex4_Pokemons/wiki
 
+## The main algorithm of the game
+
 ## Pre-Work
 
-We already implemented these algorithms in Java you can have a look at this: <br>
-https://github.com/SaliSharfman/Ex2_DirectedWeightedGraph.git
-https://github.com/SaliSharfman/Ex3_DWG.git
-
-
-## Algorithms 
-
+We already implemented some of the algorithms on the graph that our game uses, you can have a look at this: <br>
+https://github.com/JosefSo/Ex3_DWG <br>
+https://github.com/SaliSharfman/Ex2_DirectedWeightedGraph
+<br>
 
 
 
