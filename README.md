@@ -1,6 +1,6 @@
 # Ex4_Pokemons - Pokemons game on Directed Weighted Graph in Python
 
-This project represents the game of pokemons on Directed Weighted Graph. The main goal of this game is to catch as many Pokemons as we can so that each catch of a Pokemon will update our grade and eventually will return the final grade score . In this project we built a directional weighted graph and the graph will be visualized by using GUI.
+This project represents the game of pokemons on Directed Weighted Graph. The main idea of this game is to catch as many pokemons as we can so each catch of a pokemon will update our score and in the end will return the final grade score . In this project we did algorithm that sends agents to catch pokemons, connected a directed weighted graph to the algorithm and also we have used client that connects to the game's server. All the game is visualized by GUI with a different agents that run after different pokemons on the graph map. Also we have music on the background og the game.
 <br> <br>
 ![pok](https://user-images.githubusercontent.com/77780368/148662389-3cc8bf19-a054-4114-badf-7dc8f28241a7.jpg)
 <br>
