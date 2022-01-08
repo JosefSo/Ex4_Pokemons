@@ -8,6 +8,12 @@ This project represents the game of pokemons on Directed Weighted Graph. The mai
 ## Implemented classes 
 As part of implementing the graphs we implemented classes:
 
+
+* Characters.py
+* client.py
+* Ex4GUI.py
+* GameAlgo.py
+* ImagesManager.py
 * class GraphAlgoInterface.py
 * class GraphInterface.py
 * class GraphAlgo.py
@@ -16,11 +22,6 @@ As part of implementing the graphs we implemented classes:
 * class main.py
 * class test_DiGraph.py
 * class test_GraphAlgo.py
-* Characters.py
-* client.py
-* Ex4GUI.py
-* GameAlgo.py
-* ImagesManager.py
 
 
 <br>
