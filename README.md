@@ -54,6 +54,8 @@ https://github.com/JosefSo/Ex4_Pokemons/wiki
 
 ## The main algorithm of the game
 
+The main algorithm of the game that sends agents to catch pokemons. Of a given agents with different speeds and pokemons with a different cost values, we faced a problem how to rich the most score as possible, how to catch the most pokemons on the given time. So we created list of agents and list of pokemons, both of them we're sorting from best to worst on each iteration of the game with the help of __lt__ function that we Implemented and it knows how to sort right our lists. Every time our algorithm sends the best agent to most cost value pokemon in order to rich as more score as possible. Also our algorithm knows to spam our agents at he beggining of the game in the best places to avoid extra steps that agents do to rich pokemons. This way our agents spam at the beggining and imediatly start to eat the pokemons.
+
 ## UML
 <br>
 Link to UML: [UML.pdf](https://github.com/JosefSo/Ex4_Pokemons/files/7834191/UML.pdf)
