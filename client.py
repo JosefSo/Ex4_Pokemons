@@ -21,7 +21,10 @@ class Client:
 
     def __send_message(self, msg):
         self.soc.send((msg + "\n").encode())
-        return self.soc.recv(MSGLEN).decode().strip()
+        try:
+            return self.soc.recv(MSGLEN).decode().strip()
+        except:
+            return False
 
     def get_agents(self):
         """

@@ -2,7 +2,11 @@ import random
 import sys
 import heapq as heap
 from collections import defaultdict
+
+import pygame
 from matplotlib import pyplot as plt
+from pygame import gfxdraw
+
 from DiGraph import DiGraph
 from GraphAlgoInterface import GraphAlgoInterface
 from GraphInterface import GraphInterface
@@ -12,7 +16,7 @@ from aco import Graph, ACO
 
 class GraphAlgo(GraphAlgoInterface):
     """This abstract class represents an interface of a graph."""
-
+    radius=15
     def __init__(self, graph:GraphInterface= DiGraph()):
         self.graph=DiGraph()
         self.graph=graph

@@ -91,6 +91,7 @@ class Characters:
             self.agents.append(agent)
 
         self.agents.sort()
+       # self.agents.reverse()
         return True
 
     def load_Pokemons_from_json(self, jsonStr: str,graph:DiGraph) -> bool:

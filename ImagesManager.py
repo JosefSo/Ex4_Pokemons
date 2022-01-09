@@ -8,18 +8,8 @@ class ImagesLoader:
         self.background_images ={}
         self.pokImages = {}
         self.agentsImages ={}
-
-        b0= pygame.image.load(os.path.join('images', 'background.jpg'))
-        b0= pygame.transform.scale(b0, (WIDTH, HEIGHT))
-        self.background_images[0]=b0
-
-        b1 = pygame.image.load(os.path.join('images', 'background1.jpg'))
-        b1 = pygame.transform.scale(b1, (WIDTH, HEIGHT))
-        self.background_images[1]=b1
-
-        b2 = pygame.image.load(os.path.join('images', 'background2.jpg'))
-        b2 = pygame.transform.scale(b2, (WIDTH, HEIGHT))
-        self.background_images[2]=b2
+        self.countdownImages={}
+        self.loadBackGrounds(WIDTH,HEIGHT)
 
         rattataIM = pygame.image.load(os.path.join('images', 'rattata.jpg'))
         rattataIM = pygame.transform.scale(rattataIM, (70, 70))
@@ -76,3 +66,36 @@ class ImagesLoader:
         mistyIM = pygame.image.load(os.path.join('images', 'misty.jpg'))
         mistyIM = pygame.transform.scale(mistyIM, (40, 80))
         self.agentsImages[2]=mistyIM
+
+        self.countdownImages[3] = pygame.image.load(os.path.join('images', '3-Countdown-Photo-Strip.jpg'))
+        self.countdownImages[3] = pygame.transform.scale(self.countdownImages[3], (WIDTH, HEIGHT))
+
+        self.countdownImages[2] = pygame.image.load(os.path.join('images', '2-Countdown-Photo-Strip.jpg'))
+        self.countdownImages[2] = pygame.transform.scale(self.countdownImages[2], (WIDTH, HEIGHT))
+
+        self.countdownImages[1] = pygame.image.load(os.path.join('images', '1-Countdown-Photo-Strip.jpg'))
+        self.countdownImages[1] = pygame.transform.scale(self.countdownImages[1], (WIDTH, HEIGHT))
+
+        self.countdownImages[0] = pygame.image.load(os.path.join('images', 'logo.jpg'))
+        self.countdownImages[0] = pygame.transform.scale(self.countdownImages[0], (WIDTH, HEIGHT))
+
+    def loadBackGrounds(self,WIDTH,HEIGHT):
+
+        b0 = pygame.image.load(os.path.join('images', 'background.jpg'))
+        b0 = pygame.transform.scale(b0, (WIDTH, HEIGHT))
+        self.background_images[0] = b0
+
+        b1 = pygame.image.load(os.path.join('images', 'background1.jpg'))
+        b1 = pygame.transform.scale(b1, (WIDTH, HEIGHT))
+        self.background_images[1] = b1
+
+        b2 = pygame.image.load(os.path.join('images', 'background2.jpg'))
+        b2 = pygame.transform.scale(b2, (WIDTH, HEIGHT))
+        self.background_images[2] = b2
+
+        self.stopgameIM = pygame.image.load(os.path.join('images', 'stopgame.jpg'))
+        self.stopgameIM = pygame.transform.scale(self.stopgameIM, (WIDTH, HEIGHT))
+
+        self.finishgameIM = pygame.image.load(os.path.join('images', 'finishgame.jpg'))
+        self.finishgameIM = pygame.transform.scale(self.finishgameIM, (WIDTH, HEIGHT))
+
