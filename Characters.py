@@ -74,6 +74,7 @@ class Characters:
         self.agents = []
         self.pokemons = []
         self.agentspaths = {}
+        #self.agentsvalues={}
         self.edegesValues=[]
     def load_Agents_from_json(self, jsonStr: str) -> bool:
         self.agents = []
@@ -91,7 +92,7 @@ class Characters:
             self.agents.append(agent)
 
         self.agents.sort()
-       # self.agents.reverse()
+        self.agents.reverse()
         return True
 
     def load_Pokemons_from_json(self, jsonStr: str,graph:DiGraph) -> bool:

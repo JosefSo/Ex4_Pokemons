@@ -20,7 +20,10 @@ class Client:
         self.soc.connect((ip, port))
 
     def __send_message(self, msg):
-        self.soc.send((msg + "\n").encode())
+        try:
+            self.soc.send((msg + "\n").encode())
+        except:
+            return False
         try:
             return self.soc.recv(MSGLEN).decode().strip()
         except:

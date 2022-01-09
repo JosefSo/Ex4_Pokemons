@@ -24,7 +24,7 @@ class GraphAlgo(GraphAlgoInterface):
     def get_graph(self) -> GraphInterface:
         return self.graph
 
-    def load_from_json(self, jsonStr: str) -> bool:
+    def load_from_jsonSring(self, jsonStr: str) -> bool:
         self.graph=DiGraph()
         dict = json.loads(jsonStr)
         nodes = dict["Nodes"]
@@ -35,6 +35,22 @@ class GraphAlgo(GraphAlgoInterface):
             else:
                 self.graph.add_node((int)(n["id"]))
         edges = dict["Edges"]
+        for n in edges:
+            self.graph.add_edge((int)(n["src"]), (int)(n["dest"]), (float)(n["w"]))
+        return True
+
+    def load_from_json(self, file_name: str) -> bool:
+        self.graph = DiGraph()
+        with open(file_name, 'r') as f:
+            dict = json.load(f)
+        nodes = dict.get("Nodes")
+        for n in nodes:
+            if "pos" in n.keys():
+                s = n["pos"].split(",")
+                self.graph.add_node((int)(n["id"]), (s[0], s[1], s[2]))
+            else:
+                self.graph.add_node((int)(n["id"]))
+        edges = dict.get("Edges")
         for n in edges:
             self.graph.add_edge((int)(n["src"]), (int)(n["dest"]), (float)(n["w"]))
         return True

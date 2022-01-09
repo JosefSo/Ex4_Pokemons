@@ -1,3 +1,4 @@
+import csv
 import json
 import subprocess
 import sys
@@ -13,15 +14,16 @@ from ImagesManager import ImagesLoader
 from client import Client
 
 #counter=0
+
 if len(sys.argv) > 1:
     try:
         subprocess.Popen(["powershell.exe", "java -jar Ex4_Server_v0.0.jar", sys.argv[1]])
-    except("ERR"):
+    except():
         print("The server is already running")
 else:
     try:
-        subprocess.Popen(["powershell.exe", "java -jar Ex4_Server_v0.0.jar 0"])
-    except("ERR"):
+        subprocess.Popen(["powershell.exe", "java -jar Ex4_Server_v0.0.jar 15"])
+    except():
         print("The server is already running")
 
 # default port
@@ -83,9 +85,11 @@ client.start_connection(HOST, PORT)
 
 #Init Graph Algorithm
 graph_algo= GraphAlgo()
-graph_algo.load_from_json(client.get_graph())
+graph_algo.load_from_jsonSring(client.get_graph())
 
 #Init Game Algorithm
+info = json.loads(client.get_info())
+level = info.get("GameServer")["game_level"]
 game_algo=GameAlgo(graph_algo)
 
 #Init Characters
@@ -142,19 +146,6 @@ def my_scale(data, x=False, y=False):
 # this commnad starts the server - the game is running now
 client.start()
 flag=False
-sc=0
-
-# def moveThread():
-#     while client.is_running() == 'true':
-#         print("move")
-#         # move agents
-#         ti.sleep(0.1)
-#
-#         client.move()
-
-# t1=threading.Thread(target=moveThread())
-# t1.start()
-# t1.join()
 
 
 while client.is_running() == 'true':
@@ -164,8 +155,11 @@ while client.is_running() == 'true':
     screen.blit(background_image, (0, 0))
     characters.load_Agents_from_json(client.get_agents())
     if flag:
-        characters.load_Pokemons_from_json(client.get_pokemons(), graph_algo.get_graph())
-    flag=True
+        try:
+            characters.load_Pokemons_from_json(client.get_pokemons(), graph_algo.get_graph())
+        except:
+            break
+
 
     # check events
     for event in pygame.event.get():
@@ -189,10 +183,12 @@ while client.is_running() == 'true':
     mouse = pygame.mouse.get_pos()
 
     # score, time to end, move counter.
-
+    try:
+        info = json.loads(client.get_info())
+    except:
+        break
     # level
-    info = json.loads(client.get_info())
-    level = info.get("GameServer")["game_level"]
+    #info = json.loads(client.get_info())
     levelabel = FONT.render(f"Level: {level}", True, crimson)
     rect = levelabel.get_rect(center=(50, 10))
     screen.blit(levelabel, rect)
@@ -204,11 +200,8 @@ while client.is_running() == 'true':
     screen.blit(timelabel, rect)
 
     # score
-    info = json.loads(client.get_info())
+    #info = json.loads(client.get_info())
     score = info.get("GameServer")["grade"]
-    if sc<score:
-        print(f"+{score-sc} total: {score}")
-        sc=score
     scorelabel = FONT.render(f"Score: {score}", True, crimson)
     rect = scorelabel.get_rect(center=(250, 10))
     screen.blit(scorelabel, rect)
@@ -234,36 +227,36 @@ while client.is_running() == 'true':
         y = my_scale(Y, y=True)
         screen.blit(imageCollection.agentsImages[agent.getId()%3], (int(x), int(y)))
         # draw edges
-        for n in graph_algo.get_graph().get_all_v().values():
-            for e in graph_algo.get_graph().all_out_edges_of_node(n.id).keys():
-                # find the edge nodes
-                src = n.id
-                dest = e
+    for n in graph_algo.get_graph().get_all_v().values():
+        for e in graph_algo.get_graph().all_out_edges_of_node(n.id).keys():
+            # find the edge nodes
+            src = n.id
+            dest = e
 
-                # scaled positions
-                sx, sy, sz = graph_algo.graph.get_all_v()[src].getLocation()
-                dx, dy, dz = graph_algo.graph.get_all_v()[dest].getLocation()
-                src_x = my_scale(sx, x=True)
-                src_y = my_scale(sy, y=True)
-                dest_x =my_scale(dx, x=True)
-                dest_y =my_scale(dy, y=True)
+            # scaled positions
+            sx, sy, sz = graph_algo.graph.get_all_v()[src].getLocation()
+            dx, dy, dz = graph_algo.graph.get_all_v()[dest].getLocation()
+            src_x = my_scale(sx, x=True)
+            src_y = my_scale(sy, y=True)
+            dest_x = my_scale(dx, x=True)
+            dest_y = my_scale(dy, y=True)
 
-                # draw the line
-                pygame.draw.line(screen, (61, 72, 126), (src_x, src_y), (dest_x, dest_y))
+            # draw the line
+            pygame.draw.line(screen, (61, 72, 126), (src_x, src_y), (dest_x, dest_y))
 
-        # draw nodes
-        for n in graph_algo.get_graph().get_all_v().values():
-            X, Y, Z = n.getLocation()
-            x = my_scale(X, x=True)
-            y = my_scale(Y, y=True)
-            # its just to get a nice antialiased circle
-            # gfxdraw.filled_circle(screen, int(x), int(y),radius, blue)
-            gfxdraw.aacircle(screen, int(x), int(y), radius, blue)
+    # draw nodes
+    for n in graph_algo.get_graph().get_all_v().values():
+        X, Y, Z = n.getLocation()
+        x = my_scale(X, x=True)
+        y = my_scale(Y, y=True)
+        # its just to get a nice antialiased circle
+        # gfxdraw.filled_circle(screen, int(x), int(y),radius, blue)
+        gfxdraw.aacircle(screen, int(x), int(y), radius, blue)
 
-            # draw the node id
-            id_srf = FONT.render(str(n.id), True, white)
-            rect = id_srf.get_rect(center=(x, y))
-            screen.blit(id_srf, rect)
+        # draw the node id
+        id_srf = FONT.render(str(n.id), True, white)
+        rect = id_srf.get_rect(center=(x, y))
+        screen.blit(id_srf, rect)
 
     # draw pokemons (note: should differ (GUI wise) between the up and the down pokemons (currently they are marked in the same way).
     for p in characters.pokemons:
@@ -271,24 +264,46 @@ while client.is_running() == 'true':
         x = my_scale(X, x=True)
         y = my_scale(Y, y=True)
         if (p.value % 15) == 0:
-            screen.blit(imageCollection.pokImages[15], (int(x), int(y)))
+            im=imageCollection.pokImages[15]
+            if p.type<0:
+                im=pygame.transform.rotate(imageCollection.pokImages[15], 180)
+            screen.blit(im, (int(x), int(y)))
         elif (p.value % 15) > 5:
-            screen.blit(imageCollection.pokImages[p.value % 15], (int(x), int(y)))
+            im = imageCollection.pokImages[p.value%15]
+            if p.type < 0:
+                im = pygame.transform.rotate(imageCollection.pokImages[p.value%15], 180)
+            screen.blit(im, (int(x), int(y)))
         else:
-            screen.blit(imageCollection.pokImages[5], (int(x), int(y)))
+            im = imageCollection.pokImages[5]
+            if p.type < 0:
+                im = pygame.transform.rotate(imageCollection.pokImages[5], 180)
+            screen.blit(im, (int(x), int(y)))
     # update screen changes
     display.update()
 
     # refresh rate
     clock.tick(10)
+    flag = True
     game_algo.choose_next_edge(characters,client)
 
-    # #move agents
-    client.move()
+    # move agents
+    try:
+        client.move()
+    except:
+        break
 
 # game over:
 print(f"You have finished the game with {score} points and {moves} moves.")
+game_algo.gamelog=f"Level {level}\n\nResults:\nGrade: {score}\nMoves: {moves}\n\nGame Log:\n{game_algo.gamelog}"
+game_algo.save_log(level)
 screen.blit(imageCollection.finishgameIM, (0, 0))
+
+rect = scorelabel.get_rect(center=(50, 10))
+screen.blit(scorelabel, rect)
+
+# moveslabel = FONT.get_bold()
+rect = moveslabel.get_rect(center=(50, 30))
+screen.blit(moveslabel, rect)
 try:
     mixer.music.load("music/PikachuSound.mp3")
     mixer.music.play()
