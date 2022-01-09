@@ -1,0 +1,30 @@
+Level 13
+
+Results:
+Grade: 246
+Moves: 436
+
+Game Log:
+59.597 seconds to end: +5.0 to Misty {"GameServer":{"pokemons":2,"is_logged_in":false,"moves":2,"grade":5,"game_level":13,"max_user_level":-1,"id":0,"graph":"data/A3","agents":2}}
+59.449 seconds to end: +8.0 to Ash {"GameServer":{"pokemons":2,"is_logged_in":false,"moves":3,"grade":13,"game_level":13,"max_user_level":-1,"id":0,"graph":"data/A3","agents":2}}
+51.533 seconds to end: +5.0 to Misty {"GameServer":{"pokemons":2,"is_logged_in":false,"moves":54,"grade":18,"game_level":13,"max_user_level":-1,"id":0,"graph":"data/A3","agents":2}}
+51.118 seconds to end: +13.0 to Ash {"GameServer":{"pokemons":2,"is_logged_in":false,"moves":57,"grade":31,"game_level":13,"max_user_level":-1,"id":0,"graph":"data/A3","agents":2}}
+46.94 seconds to end: +9.0 to Ash {"GameServer":{"pokemons":2,"is_logged_in":false,"moves":87,"grade":40,"game_level":13,"max_user_level":-1,"id":0,"graph":"data/A3","agents":2}}
+37.592 seconds to end: +14.0 to Ash {"GameServer":{"pokemons":2,"is_logged_in":false,"moves":155,"grade":54,"game_level":13,"max_user_level":-1,"id":0,"graph":"data/A3","agents":2}}
+35.916 seconds to end: +13.0 to Ash {"GameServer":{"pokemons":2,"is_logged_in":false,"moves":167,"grade":67,"game_level":13,"max_user_level":-1,"id":0,"graph":"data/A3","agents":2}}
+35.784 seconds to end: +12.0 to Misty {"GameServer":{"pokemons":2,"is_logged_in":false,"moves":168,"grade":79,"game_level":13,"max_user_level":-1,"id":0,"graph":"data/A3","agents":2}}
+35.109 seconds to end: +15.0 to Misty {"GameServer":{"pokemons":2,"is_logged_in":false,"moves":173,"grade":94,"game_level":13,"max_user_level":-1,"id":0,"graph":"data/A3","agents":2}}
+31.49 seconds to end: +6.0 to Ash {"GameServer":{"pokemons":2,"is_logged_in":false,"moves":199,"grade":100,"game_level":13,"max_user_level":-1,"id":0,"graph":"data/A3","agents":2}}
+24.639 seconds to end: +15.0 to Misty {"GameServer":{"pokemons":2,"is_logged_in":false,"moves":249,"grade":115,"game_level":13,"max_user_level":-1,"id":0,"graph":"data/A3","agents":2}}
+22.029 seconds to end: +10.0 to Ash {"GameServer":{"pokemons":2,"is_logged_in":false,"moves":268,"grade":125,"game_level":13,"max_user_level":-1,"id":0,"graph":"data/A3","agents":2}}
+18.587 seconds to end: +7.0 to Ash {"GameServer":{"pokemons":2,"is_logged_in":false,"moves":293,"grade":132,"game_level":13,"max_user_level":-1,"id":0,"graph":"data/A3","agents":2}}
+18.183 seconds to end: +15.0 to Misty {"GameServer":{"pokemons":2,"is_logged_in":false,"moves":296,"grade":147,"game_level":13,"max_user_level":-1,"id":0,"graph":"data/A3","agents":2}}
+18.046 seconds to end: +12.0 to Misty {"GameServer":{"pokemons":2,"is_logged_in":false,"moves":297,"grade":159,"game_level":13,"max_user_level":-1,"id":0,"graph":"data/A3","agents":2}}
+17.224 seconds to end: +14.0 to Ash {"GameServer":{"pokemons":2,"is_logged_in":false,"moves":303,"grade":173,"game_level":13,"max_user_level":-1,"id":0,"graph":"data/A3","agents":2}}
+13.465 seconds to end: +15.0 to Misty {"GameServer":{"pokemons":2,"is_logged_in":false,"moves":332,"grade":188,"game_level":13,"max_user_level":-1,"id":0,"graph":"data/A3","agents":2}}
+12.95 seconds to end: +13.0 to Misty {"GameServer":{"pokemons":2,"is_logged_in":false,"moves":336,"grade":201,"game_level":13,"max_user_level":-1,"id":0,"graph":"data/A3","agents":2}}
+9.371 seconds to end: +10.0 to Misty {"GameServer":{"pokemons":2,"is_logged_in":false,"moves":364,"grade":211,"game_level":13,"max_user_level":-1,"id":0,"graph":"data/A3","agents":2}}
+7.844 seconds to end: +6.0 to Misty {"GameServer":{"pokemons":2,"is_logged_in":false,"moves":376,"grade":217,"game_level":13,"max_user_level":-1,"id":0,"graph":"data/A3","agents":2}}
+5.14 seconds to end: +7.0 to Ash {"GameServer":{"pokemons":2,"is_logged_in":false,"moves":397,"grade":224,"game_level":13,"max_user_level":-1,"id":0,"graph":"data/A3","agents":2}}
+2.957 seconds to end: +12.0 to Ash {"GameServer":{"pokemons":2,"is_logged_in":false,"moves":414,"grade":236,"game_level":13,"max_user_level":-1,"id":0,"graph":"data/A3","agents":2}}
+2.556 seconds to end: +10.0 to Misty {"GameServer":{"pokemons":2,"is_logged_in":false,"moves":417,"grade":246,"game_level":13,"max_user_level":-1,"id":0,"graph":"data/A3","agents":2}}

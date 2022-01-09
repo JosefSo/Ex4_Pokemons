@@ -1,0 +1,17 @@
+Level 0
+
+Results:
+Grade: 100
+Moves: 290
+
+Game Log:
+29.542 seconds to end: +5.0 to Ash {"GameServer":{"pokemons":1,"is_logged_in":false,"moves":4,"grade":5,"game_level":0,"max_user_level":-1,"id":0,"graph":"data/A0","agents":1}}
+21.349 seconds to end: +8.0 to Ash {"GameServer":{"pokemons":1,"is_logged_in":false,"moves":77,"grade":13,"game_level":0,"max_user_level":-1,"id":0,"graph":"data/A0","agents":1}}
+19.543 seconds to end: +13.0 to Ash {"GameServer":{"pokemons":1,"is_logged_in":false,"moves":95,"grade":26,"game_level":0,"max_user_level":-1,"id":0,"graph":"data/A0","agents":1}}
+19.442 seconds to end: +5.0 to Ash {"GameServer":{"pokemons":1,"is_logged_in":false,"moves":96,"grade":31,"game_level":0,"max_user_level":-1,"id":0,"graph":"data/A0","agents":1}}
+17.636 seconds to end: +9.0 to Ash {"GameServer":{"pokemons":1,"is_logged_in":false,"moves":114,"grade":40,"game_level":0,"max_user_level":-1,"id":0,"graph":"data/A0","agents":1}}
+11.213 seconds to end: +12.0 to Ash {"GameServer":{"pokemons":1,"is_logged_in":false,"moves":178,"grade":52,"game_level":0,"max_user_level":-1,"id":0,"graph":"data/A0","agents":1}}
+8.999 seconds to end: +14.0 to Ash {"GameServer":{"pokemons":1,"is_logged_in":false,"moves":200,"grade":66,"game_level":0,"max_user_level":-1,"id":0,"graph":"data/A0","agents":1}}
+8.899 seconds to end: +13.0 to Ash {"GameServer":{"pokemons":1,"is_logged_in":false,"moves":201,"grade":79,"game_level":0,"max_user_level":-1,"id":0,"graph":"data/A0","agents":1}}
+5.083 seconds to end: +6.0 to Ash {"GameServer":{"pokemons":1,"is_logged_in":false,"moves":239,"grade":85,"game_level":0,"max_user_level":-1,"id":0,"graph":"data/A0","agents":1}}
+1.469 seconds to end: +15.0 to Ash {"GameServer":{"pokemons":1,"is_logged_in":false,"moves":275,"grade":100,"game_level":0,"max_user_level":-1,"id":0,"graph":"data/A0","agents":1}}

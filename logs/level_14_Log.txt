@@ -1,0 +1,23 @@
+Level 14
+
+Results:
+Grade: 167
+Moves: 217
+
+Game Log:
+29.598 seconds to end: +5.0 to Brook {"GameServer":{"pokemons":3,"is_logged_in":false,"moves":2,"grade":18,"game_level":14,"max_user_level":-1,"id":0,"graph":"data/A3","agents":3}}
+29.597 seconds to end: +13.0 to Ash {"GameServer":{"pokemons":3,"is_logged_in":false,"moves":2,"grade":18,"game_level":14,"max_user_level":-1,"id":0,"graph":"data/A3","agents":3}}
+29.471 seconds to end: +8.0 to Misty {"GameServer":{"pokemons":3,"is_logged_in":false,"moves":3,"grade":26,"game_level":14,"max_user_level":-1,"id":0,"graph":"data/A3","agents":3}}
+27.575 seconds to end: +12.0 to Misty {"GameServer":{"pokemons":3,"is_logged_in":false,"moves":16,"grade":43,"game_level":14,"max_user_level":-1,"id":0,"graph":"data/A3","agents":3}}
+27.575 seconds to end: +5.0 to Ash {"GameServer":{"pokemons":3,"is_logged_in":false,"moves":16,"grade":43,"game_level":14,"max_user_level":-1,"id":0,"graph":"data/A3","agents":3}}
+21.602 seconds to end: +14.0 to Misty {"GameServer":{"pokemons":3,"is_logged_in":false,"moves":59,"grade":57,"game_level":14,"max_user_level":-1,"id":0,"graph":"data/A3","agents":3}}
+21.173 seconds to end: +9.0 to Brook {"GameServer":{"pokemons":3,"is_logged_in":false,"moves":62,"grade":66,"game_level":14,"max_user_level":-1,"id":0,"graph":"data/A3","agents":3}}
+20.09 seconds to end: +13.0 to Misty {"GameServer":{"pokemons":3,"is_logged_in":false,"moves":70,"grade":79,"game_level":14,"max_user_level":-1,"id":0,"graph":"data/A3","agents":3}}
+11.64 seconds to end: +15.0 to Brook {"GameServer":{"pokemons":3,"is_logged_in":false,"moves":132,"grade":94,"game_level":14,"max_user_level":-1,"id":0,"graph":"data/A3","agents":3}}
+11.188 seconds to end: +15.0 to Misty {"GameServer":{"pokemons":3,"is_logged_in":false,"moves":135,"grade":109,"game_level":14,"max_user_level":-1,"id":0,"graph":"data/A3","agents":3}}
+8.13 seconds to end: +6.0 to Ash {"GameServer":{"pokemons":3,"is_logged_in":false,"moves":157,"grade":115,"game_level":14,"max_user_level":-1,"id":0,"graph":"data/A3","agents":3}}
+5.269 seconds to end: +10.0 to Brook {"GameServer":{"pokemons":3,"is_logged_in":false,"moves":178,"grade":125,"game_level":14,"max_user_level":-1,"id":0,"graph":"data/A3","agents":3}}
+4.874 seconds to end: +15.0 to Misty {"GameServer":{"pokemons":3,"is_logged_in":false,"moves":181,"grade":140,"game_level":14,"max_user_level":-1,"id":0,"graph":"data/A3","agents":3}}
+4.741 seconds to end: +12.0 to Misty {"GameServer":{"pokemons":3,"is_logged_in":false,"moves":182,"grade":152,"game_level":14,"max_user_level":-1,"id":0,"graph":"data/A3","agents":3}}
+0.143 seconds to end: +5.0 to Misty {"GameServer":{"pokemons":3,"is_logged_in":false,"moves":216,"grade":157,"game_level":14,"max_user_level":-1,"id":0,"graph":"data/A3","agents":3}}
+0.012 seconds to end: +10.0 to Misty {"GameServer":{"pokemons":3,"is_logged_in":false,"moves":217,"grade":167,"game_level":14,"max_user_level":-1,"id":0,"graph":"data/A3","agents":3}}

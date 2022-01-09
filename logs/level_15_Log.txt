@@ -1,0 +1,29 @@
+Level 15
+
+Results:
+Grade: 240
+Moves: 456
+
+Game Log:
+59.61 seconds to end: +13.0 to Ash {"GameServer":{"pokemons":4,"is_logged_in":false,"moves":2,"grade":13,"game_level":15,"max_user_level":-1,"id":0,"graph":"data/A3","agents":1}}
+57.575 seconds to end: +5.0 to Ash {"GameServer":{"pokemons":4,"is_logged_in":false,"moves":16,"grade":18,"game_level":15,"max_user_level":-1,"id":0,"graph":"data/A3","agents":1}}
+55.316 seconds to end: +9.0 to Ash {"GameServer":{"pokemons":4,"is_logged_in":false,"moves":33,"grade":27,"game_level":15,"max_user_level":-1,"id":0,"graph":"data/A3","agents":1}}
+44.218 seconds to end: +8.0 to Ash {"GameServer":{"pokemons":4,"is_logged_in":false,"moves":117,"grade":35,"game_level":15,"max_user_level":-1,"id":0,"graph":"data/A3","agents":1}}
+42.414 seconds to end: +12.0 to Ash {"GameServer":{"pokemons":4,"is_logged_in":false,"moves":130,"grade":47,"game_level":15,"max_user_level":-1,"id":0,"graph":"data/A3","agents":1}}
+36.225 seconds to end: +14.0 to Ash {"GameServer":{"pokemons":4,"is_logged_in":false,"moves":176,"grade":61,"game_level":15,"max_user_level":-1,"id":0,"graph":"data/A3","agents":1}}
+35.412 seconds to end: +13.0 to Ash {"GameServer":{"pokemons":4,"is_logged_in":false,"moves":182,"grade":74,"game_level":15,"max_user_level":-1,"id":0,"graph":"data/A3","agents":1}}
+30.258 seconds to end: +15.0 to Ash {"GameServer":{"pokemons":4,"is_logged_in":false,"moves":221,"grade":89,"game_level":15,"max_user_level":-1,"id":0,"graph":"data/A3","agents":1}}
+24.08 seconds to end: +15.0 to Ash {"GameServer":{"pokemons":4,"is_logged_in":false,"moves":264,"grade":104,"game_level":15,"max_user_level":-1,"id":0,"graph":"data/A3","agents":1}}
+22.433 seconds to end: +10.0 to Ash {"GameServer":{"pokemons":4,"is_logged_in":false,"moves":277,"grade":114,"game_level":15,"max_user_level":-1,"id":0,"graph":"data/A3","agents":1}}
+20.559 seconds to end: +7.0 to Ash {"GameServer":{"pokemons":4,"is_logged_in":false,"moves":291,"grade":121,"game_level":15,"max_user_level":-1,"id":0,"graph":"data/A3","agents":1}}
+19.059 seconds to end: +5.0 to Ash {"GameServer":{"pokemons":4,"is_logged_in":false,"moves":303,"grade":126,"game_level":15,"max_user_level":-1,"id":0,"graph":"data/A3","agents":1}}
+18.807 seconds to end: +12.0 to Ash {"GameServer":{"pokemons":4,"is_logged_in":false,"moves":305,"grade":138,"game_level":15,"max_user_level":-1,"id":0,"graph":"data/A3","agents":1}}
+18.055 seconds to end: +15.0 to Ash {"GameServer":{"pokemons":4,"is_logged_in":false,"moves":311,"grade":153,"game_level":15,"max_user_level":-1,"id":0,"graph":"data/A3","agents":1}}
+15.428 seconds to end: +14.0 to Ash {"GameServer":{"pokemons":4,"is_logged_in":false,"moves":332,"grade":167,"game_level":15,"max_user_level":-1,"id":0,"graph":"data/A3","agents":1}}
+12.671 seconds to end: +15.0 to Ash {"GameServer":{"pokemons":4,"is_logged_in":false,"moves":354,"grade":182,"game_level":15,"max_user_level":-1,"id":0,"graph":"data/A3","agents":1}}
+12.42 seconds to end: +13.0 to Ash {"GameServer":{"pokemons":4,"is_logged_in":false,"moves":356,"grade":195,"game_level":15,"max_user_level":-1,"id":0,"graph":"data/A3","agents":1}}
+10.797 seconds to end: +7.0 to Ash {"GameServer":{"pokemons":4,"is_logged_in":false,"moves":369,"grade":202,"game_level":15,"max_user_level":-1,"id":0,"graph":"data/A3","agents":1}}
+8.556 seconds to end: +12.0 to Ash {"GameServer":{"pokemons":4,"is_logged_in":false,"moves":387,"grade":214,"game_level":15,"max_user_level":-1,"id":0,"graph":"data/A3","agents":1}}
+7.815 seconds to end: +10.0 to Ash {"GameServer":{"pokemons":4,"is_logged_in":false,"moves":393,"grade":224,"game_level":15,"max_user_level":-1,"id":0,"graph":"data/A3","agents":1}}
+6.457 seconds to end: +6.0 to Ash {"GameServer":{"pokemons":4,"is_logged_in":false,"moves":404,"grade":230,"game_level":15,"max_user_level":-1,"id":0,"graph":"data/A3","agents":1}}
+4.715 seconds to end: +10.0 to Ash {"GameServer":{"pokemons":4,"is_logged_in":false,"moves":418,"grade":240,"game_level":15,"max_user_level":-1,"id":0,"graph":"data/A3","agents":1}}

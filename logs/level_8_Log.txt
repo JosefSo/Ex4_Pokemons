@@ -1,0 +1,12 @@
+Level 8
+
+Results:
+Grade: 47
+Moves: 292
+
+Game Log:
+27.984 seconds to end: +13.0 to Ash {"GameServer":{"pokemons":3,"is_logged_in":false,"moves":19,"grade":13,"game_level":8,"max_user_level":-1,"id":0,"graph":"data/A2","agents":1}}
+22.306 seconds to end: +5.0 to Ash {"GameServer":{"pokemons":3,"is_logged_in":false,"moves":74,"grade":18,"game_level":8,"max_user_level":-1,"id":0,"graph":"data/A2","agents":1}}
+20.576 seconds to end: +9.0 to Ash {"GameServer":{"pokemons":3,"is_logged_in":false,"moves":91,"grade":27,"game_level":8,"max_user_level":-1,"id":0,"graph":"data/A2","agents":1}}
+10.239 seconds to end: +8.0 to Ash {"GameServer":{"pokemons":3,"is_logged_in":false,"moves":192,"grade":35,"game_level":8,"max_user_level":-1,"id":0,"graph":"data/A2","agents":1}}
+9.19 seconds to end: +12.0 to Ash {"GameServer":{"pokemons":3,"is_logged_in":false,"moves":202,"grade":47,"game_level":8,"max_user_level":-1,"id":0,"graph":"data/A2","agents":1}}
